@@ -1,0 +1,151 @@
+
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+
+.image-container {
+    text-align: center;
+    /* margin-top: 10px; */
+    width: 100%;
+    background-color: #000000;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.information-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.information-container h2 {
+    color: #333;
+}
+
+.information-container p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.info-button, .download-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.info-button {
+    background-color: transparent;
+            color: #462976;
+            border: 2px solid #462976; 
+            padding: 10px 20px; 
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+}
+.info-button:hover {
+    background-color: rgb(2, 0, 0);
+    color: #ffffff; 
+}
+.download-button {
+    background-color: transparent;
+            color: #462976;
+            border: 2px solid #462976; 
+            padding: 10px 20px; 
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.download-button:hover {
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    
+}
+
+
+
+
+.navbar {
+    background-color: #8a8383;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    height: 60px;
+    
+}
+
+.nav1 {
+    color: #000000;
+    text-decoration: none !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Add padding to the sides of the container */
+}
+.nav1:hover {
+color: #ffffff;
+}
+
+.nav2 {
+    color: #000000;
+    text-decoration: none !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.nav2:hover {
+    color: #ffffff;
+    }
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.functions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.new-book {
+    text-align: center;
+    margin: 20px;
+    
+}
+
+.new-book button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.new-book i {
+    margin-bottom: 8px; /* Adjust the margin as needed for spacing */
+    
+}

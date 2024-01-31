@@ -1,0 +1,56 @@
+{%include 'navbar.html'%}
+<link rel="stylesheet" href="/media/css/style.css" type="text/css"/>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<div class="container mt-4">
+    <div class="container mt-4">
+        <h2 class="mb-4">Return Book</h2>
+        
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Book Title</th>
+              <th scope="col">Borrower</th>
+              <th scope="col">Borrow Date</th>
+              <th scope="col">Return Date</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for borrowed_book in borrowed_books %}
+              <tr>
+                <td>{{ borrowed_book.BookID.Title }}</td>
+                <td>{{ borrowed_book.UserID.Name }}</td>
+                <td>{{ borrowed_book.BorrowDate }}</td>
+                <td>{{ borrowed_book.ReturnDate }}</td>
+                <td>
+                  <form method="post" action="{% url 'return_book' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="borrowed_book_id" value="{{ borrowed_book.id }}">
+                    <button type="submit" class="btn btn-primary">Return Book</button>
+                  </form>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      {% if message %}
+      <div class="alert alert-success" role="alert">
+        {{ message }}
+      </div>
+    {% endif %}
+
+    {% if no_books_message %}
+      <div class="alert alert-info" role="alert">
+        {{ no_books_message }}
+      </div>
+    {% endif %}
+
+{% include 'footer.html'%}
+

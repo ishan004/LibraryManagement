@@ -1,0 +1,88 @@
+<!-- templates/admin_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/media/css/style.css" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+
+    {%include 'navbar.html'%}
+    <div class="functions">
+        <div class="new-book">
+            <a href="{% url 'add_new_book' %}">
+                <button class="download-button">
+                    <i class="bi bi-database-fill-add" style="font-size: 24px;"></i> Add New Book
+                </button>
+            </a>
+        </div>
+    
+        <div class="new-book">
+            <a href="{% url 'list_all_books' %}">
+                <button class="download-button">
+                    <i class="bi bi-book-fill" style="font-size: 24px;"></i> List All Books
+                </button>
+            </a>
+        </div>
+    
+        <div class="new-book">
+            <a href="{% url 'create_new_user' %}">
+                <button class="download-button">
+                    <i class="bi bi-person-add" style="font-size: 24px;"></i> Add Member
+                </button>
+            </a>
+        </div>
+    
+        <div class="new-book">
+            <a href="{% url 'list_all_users' %}">
+                <button class="download-button">
+                    <i class="bi bi-person-bounding-box" style="font-size: 24px;"></i> View All Users
+                </button>
+            </a>
+        </div>
+    
+        
+    </div>
+
+
+    <div class="functions">
+    <div class="new-book">
+        <a href="{%url 'borrow_book'%}">
+            <button class="download-button">
+                <i class="bi bi-journal-check" style="font-size: 24px;"></i> Issue Book
+            </button>
+        </a>
+    </div>
+
+
+    <div class="new-book">
+        <a href="{% url 'list_all_borrowed_books' %}">
+            <button class="download-button">
+                <i class="bi bi-journal-check" style="font-size: 24px;"></i> Book Issued
+            </button>
+        </a>
+    </div>
+
+    <div class="new-book">
+        <a href="{%url  'return_book'%}">
+            <button class="download-button">
+                <i class="bi bi-journal-check" style="font-size: 24px;"></i> Return Book
+            </button>
+        </a>
+    </div>
+</div>
+
+     
+
+{%include 'footer.html'%}
+</body>
+</html>

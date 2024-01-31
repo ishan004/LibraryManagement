@@ -1,0 +1,28 @@
+{%include "navbar.html"%}
+<link rel="stylesheet" href="/media/css/style.css" type="text/css"/>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<h2>Assign/Update Book Details:</h2>
+{% for book in books %}
+      <a href="{% url 'get_book_by_id' book.BookID %}">{{ book.Title }}</a>
+        
+    {% endfor %}
+<form method="post" action="{% url 'assign_update_book_details' book.BookID %}">
+  {% csrf_token %}
+  <label for="number_of_pages">Number of Pages:</label>
+  <input type="number" name="number_of_pages" required>
+  <br>
+  <label for="publisher">Publisher:</label>
+  <input type="text" name="publisher" required>
+  <br>
+  <label for="language">Language:</label>
+  <input type="text" name="language" required>
+  <br>
+  <button type="submit">Save</button>
+</form>
+{%include "footer.html"%}

@@ -1,0 +1,34 @@
+{%include "navbar.html"%}
+<link rel="stylesheet" href="/media/css/style.css" type="text/css"/>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<h2>List of Books</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Book ID</th>
+      <th>Title</th>
+      <th>ISBN</th>
+      <th>Published Date</th>
+      <th>Genre</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for book in books %}
+      <tr>
+        <td><a href="{% url 'get_book_by_id' book.BookID %}">{{book.BookID}}</a></td>
+        <td><a href="{% url 'get_book_by_id' book.BookID %}">{{ book.Title }}</a></td>
+        <td>{{ book.ISBN }}</td>
+        <td>{{ book.PublishedDate }}</td>
+        <td>{{ book.Genre }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{%include "footer.html"%}
