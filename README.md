@@ -81,11 +81,7 @@ Visit [http://localhost:8000] for the webapp or Visit [http://localhost:8000/adm
     - Method: GET
  
 
-### Additional Notes and Assumptions
-
-### Assumptions
-- The system assumes the use of Django web Framework.
-- The system is although made with my understanding of the instruction in the mail but is far from over to be completely commercialized.
+### Additional Notes 
 
   ### Additional Note
   - The System also includes Authentication but only has option for admin.
